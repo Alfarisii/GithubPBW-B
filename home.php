@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['simple_login'])){
+        header("Location: index.php");
+        exit();
+    }
+     
+/*** you can  write your protected content here ***/
+ 
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -122,6 +132,9 @@
 
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+                <a class="nav-link" href="index.html">WELCOME ADMIN!</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link active" href="index.html">Home</a>
               </li>
@@ -140,7 +153,7 @@
                 <a class="nav-link" href="#lulusan">Lulusan</a>
               </li>
 			  <li class="nav-item">
-               <a class="nav-link" href="Login.php">Login</a>
+               <a class="nav-link" href="Logout.php">Logout</a>
               </li>
 
             </ul>
