@@ -12,7 +12,7 @@
         if($username == $user['user'] && $pass == $user['pass']){
             session_start();
             $_SESSION['simple_login'] = $username;
-            header("Location: Admin.php");
+            header("Location: Dashboard.php");
             exit();
         }else{
             $error = '<div class="alert alert-danger">Invalid Login</div>';
@@ -23,7 +23,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Simple php login without database by php-gym.com</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
     <!-- Include stylesheet for better appearance of login form -->
