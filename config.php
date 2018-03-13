@@ -1,11 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "user";
+/**
+ * using mysqli_connect for database connection
+ */
+ 
+$databaseHost = 'localhost';
+$databaseName = 'id4895958_crud_db';
+$databaseUsername = 'id4895958_alfarisi';
+$databasePassword = 'alfarisi';
 
-$connection = mysqli_connect($servername, $username, $password, $dbname);
-if (!$connection){
-        die("Connection Failed:".mysqli_connect_error());
-    }
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);  
+ 
 ?>

@@ -1,7 +1,7 @@
 <?php
 $name=$_POST['name'];
 $email=$_POST['email'];
-$subject=$_POST['subject'];
+$subject='Kritik dan saran';
 $message=$_POST['message'];
 
 $to='teknologi.informasi@its.ac.id';
@@ -19,4 +19,12 @@ if(@mail)
 {
 echo "Email sent successfully !!";	
 }
+
+// include database connection file
+		include_once("config.php");
+		
+// Insert user data into table
+		$result = mysqli_query($mysqli, "INSERT INTO users(name,subject,email,message) VALUES('$name','$subject','$email','$message')");
+		
+		
 ?>
