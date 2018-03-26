@@ -20,6 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo "ini lifi";
+		$this->load->view('index');
+	}
+	function login(){
+		$this->load->view('v_login');
 	}
 }
