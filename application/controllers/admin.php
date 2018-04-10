@@ -67,11 +67,11 @@ class Admin extends CI_Controller{
 		$this->m_admin->input_data($data,'users');
 		redirect('welcome');
 }
-   function export(){
+      function export(){
         header("Content-type: application/vnd-ms-excel");
         header("Content-Disposition: attachment; filename=Report.xls");
     
-        $data['content'] = $this->db->get('users');
-        $this->load->view('v_admin', $data, FALSE);
+    $data['users'] = $this->m_admin->tampil_data()->result();
+    $this->load->view('v_admin',$data);
     }
 }
