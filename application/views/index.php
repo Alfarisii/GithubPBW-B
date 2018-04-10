@@ -443,11 +443,15 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mb-5 element-animate">
-            <form action="Contact.php" target="_blank" method="post">
+            <form action="<?php echo base_url(). 'admin/tambah_aksi'; ?>" target="_blank" method="post">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="name">Name</label>
                   <input type="text" class="form-control form-control-lg" name="name">
+                </div>
+               <div class="col-md-6 form-group">
+                  <label for="name">Subject</label>
+                  <input type="text" class="form-control form-control-lg" name="subject">
                 </div>
               </div>
               <div class="row">
