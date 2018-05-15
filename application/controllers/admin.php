@@ -48,6 +48,7 @@ class Admin extends CI_Controller{
   }
 
   function tambah_aksi(){
+    echo(date("Y-m-d",$t));
 		$Nama = $this->input->post('name');
 		$Email = $this->input->post('email');
 		$Subject = $this->input->post('subject');
