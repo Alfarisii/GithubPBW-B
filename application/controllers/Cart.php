@@ -9,8 +9,7 @@ class Cart extends CI_Controller{
 
 	function index(){
 		$data['data']=$this->cart_model->get_all_produk();
-		var_dump($this->cart->contents());
-		die();
+		
 		$this->load->view('header');
 		$this->load->view('v_cart',$data);
 		$this->load->view('footer');
@@ -51,6 +50,18 @@ class Cart extends CI_Controller{
 		';
 		return $output;
 	}
+
+	function get_quantity(){ //Fungsi untuk menampilkan Cart
+	
+		$total = 0;
+		foreach ($this->cart->contents() as $items) {
+			$total += $items['qty'];
+		}
+		
+		echo $total;
+	}
+
+
 
 	function show_notif(){ //Fungsi untuk menampilkan Cart
 		$output = '';

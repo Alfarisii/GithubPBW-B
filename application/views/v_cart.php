@@ -75,6 +75,14 @@
 					$('#detail_cart').html(data);
 				}
 			});
+
+			$.ajax({
+				url : "<?php echo base_url();?>cart/get_quantity",
+				method : "GET",
+				success: function(data){ 	
+					$(".cart-icon").attr('data-notify', data);
+				}
+			});
 		});
 
 		// Load shopping cart
