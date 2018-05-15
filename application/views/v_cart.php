@@ -50,10 +50,7 @@
 				<tbody id="detail_cart">
 
 				</tbody>
-				<tbody id="detail">
 
-				</tbody>
-				
 			</table>
 		</div>
 	</div>
@@ -74,7 +71,7 @@
 				url : "<?php echo base_url();?>cart/add_to_cart",
 				method : "POST",
 				data : {for_id: for_id , title: title, price: price, quantity: quantity},
-				success: function(data){
+				success: function(data){ 	
 					$('#detail_cart').html(data);
 				}
 			});

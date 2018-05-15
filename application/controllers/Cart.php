@@ -9,6 +9,8 @@ class Cart extends CI_Controller{
 
 	function index(){
 		$data['data']=$this->cart_model->get_all_produk();
+		var_dump($this->cart->contents());
+		die();
 		$this->load->view('header');
 		$this->load->view('v_cart',$data);
 		$this->load->view('footer');
@@ -20,6 +22,7 @@ class Cart extends CI_Controller{
 			'name' => $this->input->post('title'), 
 			'price' => $this->input->post('price'), 
 			'qty' => $this->input->post('quantity'), 
+			//cart sesion dari controller cart
 		);
 		$this->cart->insert($data);
 		echo $this->show_cart(); //tampilkan cart setelah added

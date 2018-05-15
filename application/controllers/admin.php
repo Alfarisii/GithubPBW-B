@@ -12,38 +12,40 @@ class Admin extends CI_Controller{
   }
 
   function index(){
-    $data['kritik'] = $this->m_admin->tampil_data()->result();
+    $data['users'] = $this->m_admin->tampil_data()->result();
     $this->load->view('v_admin',$data);
   }
 
   function edit($id){
     $where = array('id' => $id);
-    $data['kritik'] = $this->m_admin->edit_data($where,'kritik')->result();
+    $data['users'] = $this->m_admin->edit_data($where,'users')->result();
     $this->load->view('v_edit',$data);
   }
 
   function update(){
     $id = $this->input->post('id');
     $nama = $this->input->post('name');
-		$email = $this->input->post('email');
+    $email = $this->input->post('email');
+	 $subject = $this->input->post('subject');
     $message = $this->input->post('message');
 
     $data = array(
-			'Nama' => $nama,
-			'Email' => $email,
-      'Message' => $message
+			'name' => $nama,
+			'email' => $email,
+			'subject' => $subject,
+            'message' => $message
 
 			);
 
     $where = array('id' => $id);
 
-    $this->m_admin->update_data($where,$data,'kritik');
+    $this->m_admin->update_data($where,$data,'users');
     redirect('admin/');
   }
 
   function hapus($id){
   $where = array('id' => $id);
-  $this->m_admin->hapus_data($where,'kritik');
+  $this->m_admin->hapus_data($where,'users');
   redirect('admin/index');
   }
 
@@ -53,15 +55,24 @@ class Admin extends CI_Controller{
 		$Email = $this->input->post('email');
 		$Subject = $this->input->post('subject');
     $Message = $this->input->post('message');
+    $date = date('m');
 
     $data = array(
-			'Nama' => $Nama,
-			'Email' => $Email,
-			'Subject' => $Subject,
-      'Message' => $Message
+    	'name' => $Nama,
+			'email' => $Email,
+      'date' => $date,
+			'subject' => $Subject,
+      'message' => $Message
 
 			);
-		$this->m_admin->input_data($data,'kritik');
+		$this->m_admin->input_data($data,'users');
 		redirect('welcome');
-	}
+}
+      function export(){
+        header("Content-type: application/vnd-ms-excel");
+        header("Content-Disposition: attachment; filename=Report.xls");
+    
+    $data['users'] = $this->m_admin->tampil_data()->result();
+    $this->load->view('v_admin',$data);
+    }
 }

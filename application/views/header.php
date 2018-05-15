@@ -190,27 +190,6 @@
 	</header>
 
 
-			<div class="col-md-4">
-			<h4>Shopping Cart</h4>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Produk</th>
-						<th>Harga</th>
-						<th>Qty</th>
-						<th>Subtotal</th>
-						<th>Aksi</th>
-					</tr>
-				</thead>
-				<tbody id="detail_cart">
-
-				</tbody>
-				<tbody id="detail">
-
-				</tbody>
-				
-			</table>
-		</div>
 
 		<!-- Cart -->
 	<div class="wrap-header-cart js-panel-cart">
@@ -228,19 +207,6 @@
 			</div>
 			
 			<div class="header-cart-content flex-w js-pscroll">
-				<thead>
-					<tr>
-						<th>Produk</th>
-						<th>Harga</th>
-						<th>Qty</th>
-						<th>Subtotal</th>
-						<th>Aksi</th>
-					</tr>
-				</thead>
-				<tbody id="detail_cart">
-
-				</tbody>
-				
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">

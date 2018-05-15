@@ -99,7 +99,7 @@ class M_admin extends CI_Model{
 
 
 	function tampil_data(){
-		return $this->db->get('kritik');
+		return $this->db->get('users');
 	}
 
   function input_data($data,$table){
